@@ -47,7 +47,7 @@ export default function Register() {
     <div>
       <Components.Container>
         <section className={cls.register_page}>
-          <div className={cls.register_page_card}>
+          <div className={cls.register_page_card} data-aos="fade-left">
             <Components.Image src={Logo} />
 
             <h3>
@@ -134,14 +134,8 @@ export default function Register() {
               </Components.Forms.Divider>
             </form>
           </div>
-          <div className={cls.register_page_bottomCard}>
-            <p>
-              Есть аккаунт? <span />
-              <Link to={AuthPath.login}>
-                Вход
-              </Link> 
-            </p>
-          </div>
+          
+          <Components.Forms.AuthNavigate location="register" />
         </section>
       </Components.Container>
     </div>
