@@ -23,7 +23,7 @@ export default function AuthNavigate({location}) {
           {
             location === "login"
             ? "Зарегистрироваться"
-            : "Вход"
+            : " Вход"
           }
         </Link> 
       </p>

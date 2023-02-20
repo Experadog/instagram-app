@@ -4,23 +4,22 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { Components } from '../../../components';
-import Logo from "../../../assets/images/logo/insta.png";
-
-import cls from "../../../assets/styles/register/Register.module.scss";
-import { Link } from 'react-router-dom';
 import { formsValidate } from '../../../helpers/forms';
 import { REQUEST } from '../../../api';
 import { Hooks } from '../../../hooks';
-import { AuthPath } from '../../../services/path';
+
+
+import cls from "../../../assets/styles/register/Register.module.scss";
+import Logo from "../../../assets/images/logo/insta.png";
 
 export default function Register() {
+  
   const { goToLogin } = Hooks.useLocations();
 
   const {
     register,
     handleSubmit,
-    formState: {errors, isValid},
-    setError
+    formState: { errors },
   } = useForm({
     mode: "onBlur"
   });
@@ -55,6 +54,7 @@ export default function Register() {
             </h3>
 
             <form onSubmit={handleSubmit(onSubmit)}>
+
               <Components.Forms.Divider>
                 <Components.Forms.TextInput 
                   type="text"
@@ -64,6 +64,7 @@ export default function Register() {
                 />
                 <Components.Forms.Errors err={errors?.username ? "err" : "success"} />
               </Components.Forms.Divider>
+
               <Components.Forms.Divider>
                 <Components.Forms.TextInput 
                   type="text"

@@ -19,7 +19,9 @@ export default function Login() {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    mode: "onBlur"
+  });
 
   const onSubmit = (data) => {
     if(data) {
@@ -48,6 +50,7 @@ export default function Login() {
                 <Components.Forms.TextInput
                   type="text"
                   placeholder="Username"
+                  err={errors}
                   {...register("username", formsValidate())}
                 />
                 <Components.Forms.Errors err={errors?.username ? "err" : "success"} />
@@ -57,6 +60,7 @@ export default function Login() {
                 <Components.Forms.TextInput
                   type="password"
                   placeholder="Password"
+                  err={errors}
                   {...register("password", formsValidate())}
                 />
                 <Components.Forms.Errors err={errors?.password ? "err" : "success"} />
